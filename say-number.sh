@@ -1,22 +1,22 @@
 #! /bin/bash
 
-# input the range of number
-echo -n "Please input the range of number: "
-read n1 n2
+echo -n "Please input the range of numbers: "
+read min max 
 
-# say the number
+diff=$(($max-$min))
+
 while [ true ]; do
-    diff=$(($n2-$n1))
-    que=$(($RANDOM%$diff+$n1))
+    que=$(($RANDOM%$diff+$min))
     say $que
-    echo -n 'input the number you just heard: '
+    echo -n 'Input the number you just heard: '
     read ans
 
-    if [[ $que = $ans ]]; then
-        echo "✅"
-    else
-        echo "❌ $que"
-    fi
+    until [[ $que = $ans ]]; do
+        echo "❌"
+        echo -n "Try again: "
+        say $que
+        read ans
+    done
+    echo "✅"
 done
-# input the number
 
