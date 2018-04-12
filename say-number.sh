@@ -1,11 +1,16 @@
 #! /bin/bash
 
-read -p "Please input the range of numbers: " min max
+clear
+function invalid_info {
+    echo "Invalid Input" >&2
+    exit
+}
 
-diff=$(($max-$min))
+IFS=":" read -p "Please input the range of numbers: " min max
+! ([[ "$min" =~ ^[0-9]+$ ]] && [[ "$max" =~ ^[0-9]+$ ]]) && invalid_info
 
 while [ true ]; do
-    que=$(($RANDOM%$diff+$min))
+    que=$(($RANDOM%$(($max-$min))+$min))
     say $que
     read -p "Answer: " ans
 
