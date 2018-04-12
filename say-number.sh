@@ -1,21 +1,18 @@
 #! /bin/bash
 
-echo -n "Please input the range of numbers: "
-read min max 
+read -p "Please input the range of numbers: " min max
 
 diff=$(($max-$min))
 
 while [ true ]; do
     que=$(($RANDOM%$diff+$min))
     say $que
-    echo -n 'Input the number you just heard: '
-    read ans
+    read -p "Answer: " ans
 
     until [[ $que = $ans ]]; do
         echo "❌"
-        echo -n "Try again: "
         say $que
-        read ans
+        read -p "Try again: " ans
     done
     echo "✅"
 done
