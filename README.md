@@ -38,7 +38,7 @@
 - [让shell脚本可执行](./chmod.sh)
 - [隐藏mac桌面](./hide-desktop.sh)
 - [显示mac桌面](./show-desktop.sh)
-- [英语数字听力练习](./say-number.sh)
+- [英语数字听力练习](./say-number.sh)
 - [打印系统信息](./sys-info-page.sh)
 
 
