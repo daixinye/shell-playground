@@ -2,7 +2,7 @@
 一些 Shell 脚本的基本练习。
 
 ## 类型
-- [string](./string.sh)
+- [string](./type/string.sh)
 
 
 ## 输入/输出
